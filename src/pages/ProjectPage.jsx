@@ -82,7 +82,7 @@ const ProjectPage = () => {
               <p>{project.tagline}</p>
             </div>
             <div className="project-detail__meta-block">
-              <span className="project-detail__meta-label">Stack</span>
+              <span className="project-detail__meta-label">Tags</span>
               <div className="project-detail__meta-tags">
                 {project.tags.map((tag) => (
                   <span key={tag}>{tag}</span>
