@@ -1,0 +1,13 @@
+.header {
+  position: relative;
+  width: 100%;
+  background: #000;
+}
+
+.header__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  font-weight: 600;
+}
