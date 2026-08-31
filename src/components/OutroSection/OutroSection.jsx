@@ -1,8 +1,24 @@
+import { useEffect, useRef, useState } from 'react'
 import './OutroSection.css'
 
 const VIDEO_PLAYBACK_RATE = 0.75
 
 const OutroSection = () => {
+  const rowRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const row = rowRef.current
+    if (!row) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    )
+    observer.observe(row)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section id="contact" className="outro">
       <video
@@ -21,7 +37,7 @@ const OutroSection = () => {
 
       <p className="outro__word">Let's build something worth scrolling for.</p>
 
-      <div className="outro__row">
+      <div className={`outro__row ${isVisible ? 'outro__row--visible' : ''}`} ref={rowRef}>
         <div className="outro__block">
           <h2 className="outro__name">Michael</h2>
           <span className="outro__caption">Frontend Developer · 2026</span>

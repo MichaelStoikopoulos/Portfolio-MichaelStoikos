@@ -82,7 +82,7 @@ const ProjectPage = () => {
               <p>{project.tagline}</p>
             </div>
             <div className="project-detail__meta-block">
-              <span className="project-detail__meta-label">Services</span>
+              <span className="project-detail__meta-label">Stack</span>
               <div className="project-detail__meta-tags">
                 {project.tags.map((tag) => (
                   <span key={tag}>{tag}</span>
@@ -90,8 +90,8 @@ const ProjectPage = () => {
               </div>
             </div>
             <div className="project-detail__meta-block">
-              <span className="project-detail__meta-label">Role</span>
-              <p>{project.role}</p>
+              <span className="project-detail__meta-label">Approach</span>
+              <p>{project.approach}</p>
             </div>
           </div>
         </header>

@@ -75,6 +75,19 @@
   letter-spacing: -0.03em;
   line-height: 0.95;
   color: #fff;
+  opacity: 0;
+  transform: translate3d(0, 90px, 0);
+  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.3s ease;
+  will-change: transform, opacity;
+}
+
+.outro__row--visible .outro__name {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.outro__row--visible .outro__block--right .outro__name {
+  transition-delay: 0.18s;
 }
 
 .outro__caption {
